@@ -1,0 +1,37 @@
+body {
+    background-color: lavender;
+}
+#p1 {
+    color: navy;
+}
+#p2 {
+    color: #007d36;
+    font-weight: bold;
+    font-size: 25px;
+    background-color: #ffffae;
+}
+#p3 {
+    color: #721f2d;
+    font-family: cursive;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+#pretty {
+    padding: 50vh 10%;
+}
+#s1 {
+    font-weight: bold;
+    color: #008097;
+    font-size: 25px;
+}
+#s2 {
+    font-style: italic;
+    letter-spacing: 2px;
+}
+#s3 {
+    background-color: #ffffae;
+}
+#s4 {
+    text-align: right;
+}
