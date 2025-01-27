@@ -1,0 +1,36 @@
+.absolute-heading {
+    font-size: 36px;
+}
+.absolute-paragraph {
+    font-size: 18px;
+}
+
+.relative-heading {
+    font-size: 5vw;
+}
+.relative-paragraph {
+    font-size: 2.5vw;
+}
+
+.absolute-img {
+    width: 350px;
+}
+.relative-img {
+    width: 100%;
+}
+
+.outer-container {
+    border: 3px solid red;
+    width: 66%;
+}
+.inner-container {
+    border: 3px solid blue;
+    width: 50%;
+    margin: 20px auto;
+}
+
+.inner-container p, .inner-container img {
+    width: 48%;
+    display: inline-block;
+    vertical-align: middle;
+}
