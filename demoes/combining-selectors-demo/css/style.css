@@ -5,7 +5,75 @@ div#navbar {
 }
 div#navbar a {
     color: pink;
+    text-decoration: none;
+    margin: 10px;
+    display: inline-block;
+    transition: font-size 0.5s, color 2.5s;
 }
 div#navbar > a {
     color: white;
+}
+div#navbar a:hover {
+    font-size: 24px;
+    color: orange;
+}
+
+p {
+    font-size: 18px;
+    letter-spacing: 1px;
+    a {
+        color: red;
+        font-weight: bold;
+        &:hover {
+            color: purple;
+        }
+    }
+}
+
+p.warning a {
+    color: green;
+}
+
+p.warning {
+    color: purple;
+}
+
+/*
+    Let's say a basic HTML element selector has a specificity level of 0-0-1.
+    Each additional basic HTML element will add 0-0-1.
+
+    If a class is involved, a single class is set to 0-1-0.
+    So, for each class, that is 0-1-0.
+
+    If an ID is involved, a single ID level is set to 1-0-0.
+    So, for each ID involved, that is 1-0-0.
+
+    This one below is: 0-0-1
+*/
+ul {
+    color: green;
+}
+/* This one below is: 0-0-3 */
+ul li a {
+    color: rgb(88, 138, 138);
+}
+/* This one below is: 1-0-2 */
+/* ul#costco a {
+    color: orange;
+} */
+/* This one below is: 1-0-3 */
+/* ul#costco li a {
+    color: red;
+} */
+
+ul p a {
+    color: aquamarine;
+}
+
+ul div a {
+    color: chartreuse;
+}
+
+ul li ~ li {
+    color: pink;
 }
