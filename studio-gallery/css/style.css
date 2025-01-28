@@ -12,26 +12,16 @@ img {
 }
 
 #frame-1 {
-    border: 10px outset #644305;
-    margin: 30px 12px 0px;
-    /* optional styles below */
-    box-shadow: -2px 2px 2px #444;
-    border-radius: 50% 50% 0px 0px;
-    /* optional styles above */
+    border: 15px outset #89602a;
+    margin: 50px 10px 0px;
+    box-shadow: -2px 2px 3px #555;
 }
 #frame-1 div {
-    background-color: antiquewhite;
     padding: 10px;
-    /* optional styles below */
-    box-shadow: inset -1px 1px 2px #444;
-    border-radius: 50% 50% 0px 0px;
-    /* optional styles above */
+    background-color: antiquewhite;
+    box-shadow: inset -1px 1px 2px #777;
 }
 #frame-1 img {
     width: 80px;
     display: block;
-    /* optional styles below */
-    height: 80px;
-    border-radius: 50% 50% 0px 0px;
-    /* optional styles above */
 }
