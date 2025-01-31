@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", serif;
+    font-weight: 300;
+}
+img {
+    width: 100%;
+    object-fit: cover;
+}
+h1, h2, a.primary {
+    font-family: "Faculty Glyphic", serif;
+}
+a {
+    font-weight: 400;
+    text-decoration: none;
+}
+.container {
+    width: 90dvw;
+    max-width: 1280px;
+    margin: 0px auto;
+}
+
+/* Primary Layout */
+#two-columns {
+    padding: 25px 0px;
+}
+#two-columns > .container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Sidebar */
+#sidebar {
+    position: sticky;
+    top: 25px;
+    min-width: 200px;
+    max-width: 500px;
+    h2 {
+        background-color: #222;
+        padding: 10px 25px;
+        color: #ffff;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    ul {
+        list-style-type: none;
+        background-color: #222;
+    }
+    ul a {
+        color: #fff;
+    }
+    ul li {
+        position: relative;
+        padding: 15px;
+        z-index: 1;
+        transition: padding 0.5s;
+        &::before {
+            content: "";
+            width: 5px;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: #d37cff;
+            z-index: -1;
+            transition: width 0.5s;
+        }
+        &:nth-of-type(2n)::before {
+            background-color: #7cdcff;
+        }
+        &:nth-of-type(3n)::before {
+            background-color: #8d7cff;
+        }
+        &:hover {
+            padding-left: 35px;
+            &::before{
+                width: 100%;
+            }
+        }
+    }
+}
+/* Main Content */
+#main {
+    flex: 1;
+    max-width: 650px;
+    .sbs {
+        display: flex;
+        gap: 25px;
+        justify-content: space-between;
+        > * {
+            flex: 1;
+        }
+        img {
+            height: 100%;
+        }
+    }
+    .section {
+        margin: 25px 0px;
+        + p {
+            margin: 0px;
+        }
+        p:last-child {
+            margin-bottom: 0px;
+        }
+    }
+    h1 {
+        font-size: 4rem;
+        padding-bottom: 10px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .intro {
+        font-weight: 200;
+        font-size: 0.9rem;
+        text-align: center;
+        padding-bottom: 15px;
+        border-bottom: 0.5px solid black;
+        text-wrap: pretty;
+        border-image: linear-gradient(to right, #fff, #111, #fff) 1;
+    }
+    p {
+        margin: 15px 0px;
+        + .section {
+            margin: 0px;
+        }
+    }
+}
