@@ -1,0 +1,167 @@
+@import url("https://use.typekit.net/hde2ivc.css");
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-family: "quicksand", sans-serif;
+    background-color: #111;
+    color: #fefefe;
+}
+h1, h2 {
+    font-family: "lust-display", serif;
+}
+a {
+    color: #fefefe;
+    font-weight: 600;
+    text-decoration: none;
+}
+button {
+    border: none;
+    background: none;
+}
+img {
+    width: 100%;
+    object-fit: cover;
+}
+.container {
+    width: 90dvw;
+    max-width: 1280px;
+    margin: 0px auto;
+}
+#two-columns {
+    position: relative;
+}
+#two-columns > .container {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    grid-template-areas: "content sidebar";
+    align-items: start;
+    gap: 50px;
+    margin: 25px auto;
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    background-color: #1115;
+    backdrop-filter: blur(15px);
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+    }
+    nav .logo {
+        margin: 0px auto;
+    }
+    nav .links {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+    nav a {
+        color: #fefefe;
+        display: inline-block;
+        padding: 15px 0px;
+        font-size: 0.9rem;
+        transition: color 0.5s;
+        &:hover {
+            color: #be2f61;
+        }
+    }
+}
+nav #hamburgy {
+    position: relative;
+    button {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        span {
+            display: block;
+            height: 0.2rem;
+            width: 1.5rem;
+            background-color: #fefefe;
+            border-radius: 3px;
+            transition: width 0.5s, background-color 0.5s;
+            &:last-child {
+                width: 1rem;
+            }
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        &:hover span {
+            background-color: #7d4f5f;
+            &:last-child {
+                width: 1.5rem;
+                background: linear-gradient(to left, #7d4f5f, #e380a2);
+            }
+        }
+    }
+}
+#hamnav {
+    background-color: #111;
+    z-index: -1;
+    padding: 15px 25px;
+    border: 2px solid #be2f61;
+    border-image: linear-gradient(to bottom right, #7d4f5f, #e380a2) 1;
+}
+#sidebar {
+    grid-area: sidebar;
+    position: sticky;
+    top: 80px;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: max-content minmax(0px, 1fr);
+    align-items: end;
+    gap: 25px 0px;
+    h2 {
+        border: 2px solid #be2f61;
+        border-image: linear-gradient(to bottom right, #7d4f5f, #e380a2) 1;
+        padding: 10px;
+        font-size: 0.9rem;
+        writing-mode: vertical-lr;
+        /* Can't decide which orientation... will come back. */
+        /* transform: rotate(180deg); */
+        color: #fff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        letter-spacing: 0.12em;
+    }
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    ul li {
+        position: relative;
+        padding: 15px 10px;
+        margin: 0px 10px;
+        cursor: pointer;
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(to right, #7d4f5f, #e380a2);
+            transition: width 0.5s;
+        }
+        &:hover::before {
+            width: 100%;
+        }
+    }
+    ul a {
+        color: #fefefe;
+    }
+}
+
+#main {
+    grid-area: content;
+}
