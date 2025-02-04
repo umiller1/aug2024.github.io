@@ -1,0 +1,72 @@
+/* Drill 1 - Write your code solution below */
+#container-d1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Drill 2 - Write your code solution below */
+#container-d2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+/* Drill 3 - Write your code solution below */
+#container-d3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-areas: "1 2 3"; */
+}
+
+/* Drill 4 - Write your code solution below */
+#container-d4 {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-areas: "c2 c3 c1";
+}
+#d4-cell1 {
+    grid-area: c1;
+}
+#d4-cell2 {
+    grid-area: c2;
+}
+#d4-cell3 {
+    grid-area: c3;
+}
+
+/* Drill 5 - Write your code solution below */
+#container-d5 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+        "box-1 box-1"
+        "box-2 box-3"
+    ;
+}
+#d5-cell1 {
+    grid-area: box-1;
+}
+#d5-cell2 {
+    grid-area: box-3;
+}
+#d5-cell3 {
+    grid-area: box-2;
+}
+
+/* Drill 6 - Write your code solution below */
+#container-d6 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "box-1 box-2"
+        "box-3 box-3"
+    ;
+}
+#d6-cell1 {
+    grid-area: box-1;
+}
+#d6-cell2 {
+    grid-area: box-2;
+}
+#d6-cell3 {
+    grid-area: box-3;
+}
