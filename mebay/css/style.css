@@ -23,9 +23,14 @@ a {
     max-width: 1280px;
     margin: 0px auto;
 }
+#atf {
+    display: grid;
+    grid-template-rows: max-content minmax(0px, 1fr);
+    height: 100dvh;
+}
 
 header {
-    background-color: #111;
+    background-color: #222;
     padding: 10px 0px;
     nav {
         display: flex;
@@ -49,17 +54,132 @@ header {
 
 main {
     padding: 25px 0px;
+    height: 100%;
+    position: relative;
 }
 main > .container {
     display: grid;
-    grid-template-columns: 125px 2fr 1fr;
-    height: 100dvh;
+    grid-template-columns: 125px 1fr 1fr;
+    gap: 15px;
+    grid-auto-rows: 100%;
+    height: 100%;
     justify-content: space-between;
-    gap: 50px;
 }
 main #c1 {
-    overflow: hidden;
+    overflow-y: scroll;
     div {
-        overflow-y: scroll;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    img {
+        min-height: 200px;
+    }
+}
+main #c2 {
+    height: 100%;
+    div {
+        height: 100%;
+    }
+    img {
+        height: 100%;
+    }
+}
+main #c3 {
+    background-color: #222;
+    color: #fff;
+    padding: 15px;
+    height: max-content;
+    position: sticky;
+    top: 0px;
+    h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+    .byline {
+        border: 0.5px solid #fff;
+        border-image: linear-gradient(to right, #fff0, #fff, #fff0) 1;
+        padding: 15px 0px;
+        display: flex;
+        justify-content: center;
+        margin: 15px 0px;
+        div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+    }
+    .byline .ic {
+        width: 4rem;
+        aspect-ratio: 1 / 1;
+        background: linear-gradient(45deg, #f3de80, #f3de80, #f0eacd, #f3de80, #f3de80);
+        border-radius: 50%;
+        padding: 2.125px;
+        img {
+            height: 100%;
+            border-radius: 50%;
+            display: block;
+        }
+    }
+    .byline h2 {
+        flex: 1;
+        font-size: 1.25rem;
+    }
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+    .content {
+        text-align: center;
+    }
+    a {
+        color: #fff;
+        transition: color 0.5s;
+        &:hover {
+            color: #f3de80;
+        }
+    }
+    .btns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+        .btn {
+            flex: 1;
+        }
+        .alt {
+            flex: 100%;;
+        }
+    }
+    .btn {
+        display: inline-block;
+        background-color: #f3de80;
+        color: #111;
+        padding: 5px 15px;
+        border: 1.5px solid #f3de80;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transition: color 0.5s, background-color 0.5s, flex 0.5s;
+        &.alt {
+            background-color: transparent;
+            color: #f3de80;
+        }
+        &:hover {
+            background-color: transparent;
+            color: #f3de80;
+            flex: 2;
+        }
+        &.alt:hover {
+            background-color: #f3de80;
+            color: #111;
+            flex: 100%;
+        }
     }
 }
