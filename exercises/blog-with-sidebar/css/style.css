@@ -170,3 +170,13 @@ nav #hamburgy {
 #main {
     grid-area: content;
 }
+
+
+@media screen and (max-width: 768px) {
+    #two-columns > .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "sidebar"
+            "content";
+    }
+}
