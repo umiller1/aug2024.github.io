@@ -7,3 +7,73 @@
     Just be aware that you may break some
     of the setup.css styling if you do so.
 */
+.card-style-3 {
+    background-color: palegoldenrod;
+    width: 350px;
+    border: gold solid 16px;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+}
+.card-style-3 .pokemon-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-style-3 .pokemon-header h2 {
+    margin: 0px;
+}
+.card-style-3 .pokemon-header .health {
+    font-size: 18px;
+}
+.card-style-3 img {
+    width: 100%;
+    border: 5px solid goldenrod;
+}
+.card-style-3 .details {
+    background: linear-gradient(to right, goldenrod, gold, goldenrod);
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 4px;
+}
+.card-style-3 .attack {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0px;
+    margin: 8px 0px;
+    border-bottom: 2px solid black;
+}
+.card-style-3 .description {
+    font-size: 14px;
+    margin: 0px 4px
+}
+.card-style-3 .description .bold {
+    font-weight: bold;
+    font-size: 18px;
+}
+.card-style-3 .power {
+    font-weight: bold;
+    font-size: 24px;
+}
+.card-style-3 .data {
+    font-size: 11px;
+    font-weight: bold;
+    border: 2px solid goldenrod;
+    padding: 2px 8px;
+}
+
+#pokemon-card-1, #pokemon-card-2 {
+    background: linear-gradient(-25deg, lightgreen, forestgreen, #90ee90);
+}
+#pokemon-card-3 {
+    background: linear-gradient(-25deg, orange, orangered, orange);
+}
+#pokemon-card-4 {
+    background: linear-gradient(-25deg, aqua, skyblue, aqua);
+}
