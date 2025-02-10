@@ -7,12 +7,3 @@
     Just be aware that you may break some
     of the setup.css styling if you do so.
 */
-.animagram-header {
-    display: flex;
-    justify-content: space-between;
-}
-#animagram-card-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
