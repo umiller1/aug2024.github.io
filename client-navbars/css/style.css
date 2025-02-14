@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Darumadrop+One&family=Homenaje&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body#client1 {
+    font-family: "Homenaje", serif;
+}
+body#client2 {
+    font-family: "Darumadrop One", serif;
+}
+body#client3 {
+    font-family: "Bebas Neue", serif;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+button {
+    border: none;
+    background-color: transparent;
+}
+
+.container {
+    width: 90dvw;
+    max-width: 1000px;
+    margin: 0px auto;
+}
+
+header {
+    background-color: #111;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding: 25px 0px;
+    a {
+        color: #eee;
+        font-size: 1.25rem;
+    }
+    #menu {
+        background-color: #30ce00;
+        padding: 25px;
+        position: absolute;
+        top: 3.12rem;
+        left: 5dvw;
+        border: none;
+    }
+    .links, #menu div {
+        display: flex;
+        gap: 25px;
+    }
+    #menu div {
+        flex-direction: column;
+        a {
+            color: #111;
+        }
+    }
+}
+#hammy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    cursor: pointer;
+    span {
+        display: block;
+        background-color: #eee;
+        width: 2rem;
+        height: 0.16rem;
+        border-radius: 2rem;
+        transition: background-color 0.5s, transform 0.5s;
+        &:last-child {
+            transform: scaleX(70%);
+            transform-origin: left;
+        }
+    }
+    &:hover span {
+        background-color: #30ce00;
+        &:last-child {
+            transform: scaleX(100%);
+        }
+    }
+}
