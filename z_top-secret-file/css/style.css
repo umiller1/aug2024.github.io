@@ -1,3 +1,4 @@
+/* General Resets */
 * {
     box-sizing: border-box;
 }
@@ -5,12 +6,100 @@ body {
     margin: 0px;
     font-family: sans-serif;
 }
-
+img {
+    width: 100%;
+}
+/* Reusable Classes / Template Classes */
 .contain {
     width: 90vw;
     max-width: 1024px;
     margin: 0px auto;
 }
-img {
-    width: 100%;
+.btn {
+    display: inline-block;
+    background-color: #e7b800;
+    padding: 10px 20px;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.25rem;
+    border-radius: 10px;
+}
+
+/* Navigation Styles */
+#nav {
+    background-color: #111;
+}
+#nav .contain {
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+#nav a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+#nav .logo {
+    font-size: 1.75rem;
+    margin-right: auto;
+}
+
+/* Intro Section Styles */
+#intro {
+    margin: 80px;
+}
+#intro .contain {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+#intro .image-container,
+#intro .text-container {
+    flex: 1;
+}
+#intro .image-container {
+    height: 400px;
+}
+#intro img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+#intro h1 {
+    font-size: 3rem;
+    margin: 0px;
+}
+#intro p {
+    font-size: 1.25rem;
+    margin: 10px 0px 50px;
+}
+
+/* Media Queries */
+/* 
+    Max-width for media queries should be largest size for device type but you
+    should be designing with the smallest device in mind to allow styles to
+    generally stretch across a multitude of sizes for that device type.
+*/
+@media screen and (max-width: 740px) and (min-width: 481px) {
+    
+}
+@media screen and (max-width: 480px) {
+    /*
+        You can use CSS grid to create two column layout for the nav as well.
+    */
+    #nav .contain {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    #nav a {
+        font-size: 1.125rem;
+        flex: 1 50%;
+    }
+    #nav .logo {
+        margin-left: auto;
+        font-size: 1.5rem;
+    }
 }

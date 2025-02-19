@@ -211,3 +211,11 @@ a {
 ****************************************************************************/
 
 /* TODO: Add your media query code here */
+@media screen and (max-width: 768px) {
+    #hero h1 {
+        font-size: 60px;
+    }
+    #hero h3 {
+        font-size: 20px;
+    }
+}
