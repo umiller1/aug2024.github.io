@@ -17,7 +17,7 @@ img {
 }
 .btn {
     display: inline-block;
-    background-color: #e7b800;
+    background-color: #eed814;
     padding: 10px 20px;
     color: #111;
     text-decoration: none;
@@ -49,7 +49,7 @@ img {
 
 /* Intro Section Styles */
 #intro {
-    margin: 80px;
+    margin: 80px auto;
 }
 #intro .contain {
     display: flex;
@@ -83,8 +83,26 @@ img {
     should be designing with the smallest device in mind to allow styles to
     generally stretch across a multitude of sizes for that device type.
 */
-@media screen and (max-width: 740px) and (min-width: 481px) {
-    
+@media screen and (max-width: 1024px) and (min-width: 481px) {
+    #intro .contain {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+    #intro .image-container,
+    #intro .text-container {
+        width: 100%;
+    }
+    #intro .image-container {
+        flex: 100px;
+    }
+    #intro h1 {
+        font-size: 2rem;
+    }
+    #intro p {
+        font-size: 1.125rem;
+        margin-bottom: 25px;
+    }
 }
 @media screen and (max-width: 480px) {
     /*
@@ -101,5 +119,27 @@ img {
     #nav .logo {
         margin-left: auto;
         font-size: 1.5rem;
+    }
+    #intro {
+        margin: 40px auto;
+    }
+    #intro .contain {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+    #intro .image-container,
+    #intro .text-container {
+        width: 100%;
+    }
+    #intro .image-container {
+        flex: 100px;
+    }
+    #intro h1 {
+        font-size: 2rem;
+    }
+    #intro p {
+        font-size: 1.125rem;
+        margin-bottom: 25px;
     }
 }
