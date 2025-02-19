@@ -30,7 +30,7 @@ img {
 #nav {
     background-color: #111;
 }
-#nav .contain {
+#nav .navlinks {
     padding: 20px 0px;
     display: flex;
     align-items: center;
@@ -49,9 +49,9 @@ img {
 
 /* Intro Section Styles */
 #intro {
-    margin: 80px auto;
+    margin: 80px 0px;
 }
-#intro .contain {
+#intro .sbs {
     display: flex;
     align-items: center;
     gap: 40px;
@@ -77,6 +77,53 @@ img {
     margin: 10px 0px 50px;
 }
 
+/* Cards Section (Grid) */
+#cards {
+    margin-bottom: 80px;
+}
+#cards .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    grid-template-areas:
+        "p1 p1 img1 img2"
+        "p2 img3 p3 p3"
+    ;
+}
+#cards #p1 {
+    grid-area: p1;
+}
+#cards #p2 {
+    grid-area: p2;
+}
+#cards #p3 {
+    grid-area: p3;
+}
+#cards #img1 {
+    grid-area: img1;
+}
+#cards #img2 {
+    grid-area: img2;
+}
+#cards #img3 {
+    grid-area: img3;
+}
+#p1,
+#p2,
+#p3 {
+    border: 2px solid #eed814;
+    border-radius: 20px;
+    padding: 20px;
+}
+.card {
+    height: 250px;
+}
+.card img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
 /* Media Queries */
 /* 
     Max-width for media queries should be largest size for device type but you
@@ -84,7 +131,7 @@ img {
     generally stretch across a multitude of sizes for that device type.
 */
 @media screen and (max-width: 1024px) and (min-width: 481px) {
-    #intro .contain {
+    #intro .sbs {
         flex-direction: column;
         gap: 25px;
         text-align: center;
@@ -103,12 +150,22 @@ img {
         font-size: 1.125rem;
         margin-bottom: 25px;
     }
+    #cards .grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "p1 p1"
+            "img1 img1"
+            "img2 p2"
+            "img3 img3"
+            "p3 p3"
+        ;
+    }
 }
 @media screen and (max-width: 480px) {
     /*
         You can use CSS grid to create two column layout for the nav as well.
     */
-    #nav .contain {
+    #nav .navlinks {
         flex-direction: column;
         flex-wrap: wrap;
     }
@@ -123,7 +180,7 @@ img {
     #intro {
         margin: 40px auto;
     }
-    #intro .contain {
+    #intro .sbs {
         flex-direction: column;
         gap: 25px;
         text-align: center;
