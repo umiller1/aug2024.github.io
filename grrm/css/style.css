@@ -139,11 +139,6 @@ body {
     transform: scale(0.95, 1.05);
     margin: 0px;
 }
-#header {
-    h1 {
-        font-size: 2px;
-    }
-}
 
 #social-section {
     text-align: right;
@@ -235,7 +230,6 @@ body {
 #aside,
 #main {
     background-color: #00000077;
-
 }
 
 /**************************************************************
@@ -455,5 +449,59 @@ body {
             "aside   blog    blog"
             "footer  footer  footer"
             "bottom  bottom  bottom";
+    }
+    #header h1 {
+        font-size: 48px;
+    }
+    #nav {
+        flex-wrap: wrap;
+    }
+    #nav a {
+        flex: 190px;
+        border-bottom: 2px solid #777;
+    }
+}
+@media screen and (max-width: 800px) {
+    #grid-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "navbar"
+            "banner"
+            "card-1"
+            "card-2"
+            "card-3"
+            "aside"
+            "blog"
+            "footer"
+            "bottom";
+    }
+    #shield-image,
+    form {
+        display: none;
+    }
+    #header {
+        flex-direction: column;
+        align-items: center;
+    }
+    #header h1 {
+        font-size: 36px;
+    }
+    #nav {
+        flex-wrap: wrap;
+    }
+    #nav a {
+        flex: 150px;
+        border-bottom: 2px solid #777;
+    }
+    #banner-container,
+    #card-1,
+    #card-2,
+    #card-3,
+    #aside,
+    #main {
+        background-color: transparent;
+        padding: 0px;
+        margin: 0px;
     }
 }
