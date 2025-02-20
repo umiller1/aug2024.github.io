@@ -87,7 +87,7 @@ img {
     gap: 20px;
     grid-template-areas:
         "p1 p1 img1 img2"
-        "p2 img3 p3 p3"
+        "img3 img4 p2 p2"
     ;
 }
 #cards #p1 {
@@ -95,9 +95,6 @@ img {
 }
 #cards #p2 {
     grid-area: p2;
-}
-#cards #p3 {
-    grid-area: p3;
 }
 #cards #img1 {
     grid-area: img1;
@@ -108,12 +105,17 @@ img {
 #cards #img3 {
     grid-area: img3;
 }
+#cards #img4 {
+    grid-area: img4;
+}
 #p1,
-#p2,
-#p3 {
+#p2 {
     border: 2px solid #eed814;
     border-radius: 20px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .card {
     height: 250px;
