@@ -4,9 +4,14 @@
     padding: 0px;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: "Quicksand", serif;
     font-size: 1.125rem;
+    font-weight: 500;
+    background-color: #eee;
 }
 h1, h2, h3 {
     font-family: "Sigmar", serif;
@@ -20,6 +25,18 @@ a {
     display: inline-block;
     text-decoration: none;
 }
+a.btn {
+    padding: 15px 25px;
+    background-color: #1b006a;
+    color: #eee;
+    border-radius: 15px;
+}
+.logo {
+    /* font-family: "Jua", serif; */
+    font-family: "Sigmar", serif;
+    letter-spacing: 0.12em;
+    font-size: 200%;
+}
 
 .contain {
     width: 90dvw;
@@ -32,10 +49,190 @@ header {
         url("../images/hero.jpg")
     ;
     background-size: cover;
-    min-height: 50vh;
+    background-position: center;
+    height: 100dvh;
+    display: grid;
+    grid-template-rows: max-content minmax(0px, 1fr);
+    position: relative;
 }
 nav .contain {
     display: flex;
     gap: 25px;
     align-items: center;
+    padding: 15px 0px;
+}
+nav a {
+    font-weight: 700;
+    color: #111;
+    transition: color 0.5s, letter-spacing 0.5s;
+    &:hover {
+        color: #1b006a;
+        letter-spacing: 0.1em;
+    }
+}
+nav .logo {
+    margin-right: auto;
+    color: #1b006a;
+    mix-blend-mode: color-burn;
+    transition: color 0.75s, letter-spacing 0.75s;
+    transition-timing-function: ease-in-out;
+    &:hover {
+        letter-spacing: -0.1em;
+        color: #d4b43f;
+    }
+}
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px 50px;
+    align-self: end;
+    padding-bottom: 40px;
+    h1 {
+        flex: 100%;
+        text-align: center;
+        font-size: clamp(2rem, 5dvw, 5rem);
+        color: #1b006a;
+    }
+}
+#cards .card {
+    flex: 1;
+    text-align: center;
+    background-color: #eee5;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    img {
+        height: 200px;
+        border-radius: 15px 15px 0px 0px;
+    }
+    h2, p {
+        padding: 0px 25px;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    p {
+        margin: 0px 0px 15px;
+    }
+    a {
+        margin-bottom: 15px;
+    }
+}
+
+main {
+    background: url(../images/backdrop.jpg);
+    background-size: cover;
+    color: #eee;
+    padding: 40px 0px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #1b006a;
+        mix-blend-mode: overlay;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: -1;
+    }
+}
+main #slider {
+    overflow-x: scroll;
+    padding: 0px 40px;
+    width: 100dvw;
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: repeat(6, 40%);
+    grid-auto-rows: 50dvh;
+    gap: 50px;
+}
+#slider .image-card {
+    position: relative;
+    border-radius: 15px;
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+    }
+    h2 {
+        position: absolute;
+        z-index: 2;
+        top: 15px;
+        left: 15px;
+        padding: 10px 15px;
+        border-radius: 15px;
+        background: url(../images/backdrop.jpg);
+        background-size: cover;
+        background-position: center center;
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: #1b006a;
+            mix-blend-mode: overlay;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            border-radius: 15px;
+        }
+    }
+    div {
+        position: absolute;
+        z-index: 1;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-100%);
+        transition: opacity 0.75s, visibiltiy 0.75s, transform 0.75s;
+        p {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+        }
+        a {
+            height: 100%;
+            border-radius: 0px 15px 15px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: flex 0.5s, letter-spacing 0.5s, font-size 0.5s;
+            &:hover {
+                flex: 1;
+                letter-spacing: 0.2em;
+                font-size: 150%;
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            background:
+                linear-gradient(0deg, #1117, #1117),
+                url(../images/backdrop.jpg);
+            background-size: cover;
+            background-position: center center;
+            border-radius: 15px;
+            opacity: 0.8;
+        }
+    }
+    &:hover div {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0px);
+    }
 }
