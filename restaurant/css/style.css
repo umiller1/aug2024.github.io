@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yellowtail&display=swap');
+:root {
+    --main: #bc0038;
+    --sec: #f2aec7;
+    --acc: #62c3d9;
+    --blk: #111;
+    --wht: #fefefe;
+    --wdt: 90dvw;
+    --gtr: 5dvw;
+}
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-family: "Poppins", serif;
+}
+h1, h2, h3 {
+    font-family: "Yellowtail", serif;
+}
+img {
+    width: 100%;
+    object-fit: cover;
+}
+a {
+    text-decoration: none;
+    color: var(--blk);
+    transition: color 0.5s;
+    &:hover {
+        color: var(--acc);
+    }
+}
+hr {
+    border: none;
+    border-bottom: 1px solid var(--blk);
+}
+.contain {
+    width: var(--wdt);
+    max-width: 1200px;
+    margin: 0px auto;
+}
+.drop {
+    position: relative;
+    &:hover .drop-menu {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    &:hover a:has(img) {
+        border-color: var(--acc);
+    }
+}
+.drop-menu {
+    position: absolute;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+    width: max-content;
+    box-shadow: -2px 2px 1px #1112;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+        opacity 0.5s,
+        visibility 0.5s,
+        transform 0.5s
+    ;
+}
+
+header {
+    height: 100dvh;
+    position: relative;
+}
+header #subnav {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 1;
+    padding: 25px 0px;
+    .contain {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: ". logo links";
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+    }
+    .logo {
+        grid-area: logo;
+    }
+    .links {
+        grid-area: links;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+    a:has(img) {
+        border-bottom: 2px solid transparent;
+    }
+}
