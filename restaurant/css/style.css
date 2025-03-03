@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yellowtail&display=swap');
 :root {
-    --main: #bc0038;
+    --main: #a30031;
     --sec: #ffd8e6;
     --acc: #62c3d9;
     --blk: #111;
@@ -37,6 +37,10 @@ a {
 hr {
     border: none;
     border-bottom: 1px solid var(--blk);
+}
+svg {
+    min-width: 1rem;
+    fill: var(--blk);
 }
 .contain {
     width: var(--wdt);
@@ -89,6 +93,25 @@ hr {
 .logo img {
     display: block;
     margin: 0px auto;
+}
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+#ham {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    span {
+        background-color: var(--blk);
+        width: 40px;
+        height: 3px;
+        border-radius: 5px;
+        &:last-child {
+            width: 30px;
+        }
+    }
 }
 
 header {
@@ -171,7 +194,13 @@ header #subnav {
 nav {
     background-color: var(--sec);
     position: sticky;
+    z-index: 3;
     top: 0px;
+    opacity: 0.8;
+    transition: opacity 0.5s;
+    &:hover {
+        opacity: 1;
+    }
     .contain {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -205,7 +234,7 @@ nav {
 }
 
 section {
-    padding: 60px 0px;
+    padding: 100px 0px;
 }
 #s1 h2 {
     font-size: clamp(2rem, 6dvw, 4rem);
@@ -244,16 +273,26 @@ section {
         text-wrap: pretty;
     }
 }
+
+#s2 > a.btn {
+    display: block;
+    width: max-content;
+    margin: 40px auto 0px;
+}
 #s2 #cards {
     display: flex;
     justify-content: space-between;
     gap: 40px;
+    
 }
 #s2 #cards .card {
     flex: 1;
-    aspect-ratio: 1 / 1;
+    height: 350px;
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     > img {
         width: 100%;
         height: 100%;
@@ -262,31 +301,216 @@ section {
         left: 0px;
         z-index: -1;
     }
+    h2 {
+        background-color: var(--blk);
+        width: max-content;
+        padding: 15px;
+        color: var(--wht);
+        font-size: 2.125rem;
+    }
+    .btn {
+        position: relative;
+        background-color: var(--main);
+        color: var(--sec);
+        display: flex;
+        align-items: center;
+        width: max-content;
+        margin-left: auto;
+        padding: 15px;
+        font-size: 1.25rem;
+        gap: 15px;
+        backdrop-filter: blur(15px);
+        border: none;
+        &:hover {
+            background-color: #fefefe55;
+            color: var(--main);
+            svg {
+                fill: var(--main);
+            }
+        }
+        span {
+            order: 1;
+            margin-left: auto;
+        }
+        svg {
+            order: 2;
+            width: 3rem;
+            fill: var(--sec);
+        }
+    }
+}
+
+#s3 {
+    min-height: 50dvh;
+    background-image: url("../images/how-it-works.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#s3 .contain {
+    background-color: #fefefe55;
+    backdrop-filter: blur(15px);
+    width: max-content;
+    padding: 40px;
+    text-align: center;
+    h2 {
+        font-size: 3rem;
+        margin-bottom: 25px;
+    }
+}
+
+footer {
+    background-color: var(--blk);
+    color: var(--wht);
+    padding: 40px 0px;
+    text-align: center;
+    a {
+        color: var(--wht);
+    }
+    #address {
+        padding: 20px 0px 40px;
+    }
+    #times, .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 25px;
+        align-items: center;
+        justify-content: center;
+    }
+    .links.b {
+        padding: 20px 0px 40px;
+    }
+    .copyright img {
+        max-width: 300px;
+        margin: 25px auto 10px;
+    }
 }
 
 @media screen and (max-width: 1320px) {
     #hero .content h1 {
         font-size: clamp(2.5rem, 9vw, 8rem);
     }
+    
 }
 @media screen and (max-width: 768px) {
     header {
-        min-height: 100dvh;
+        min-height: none;
         height: auto;
+        padding-bottom: 80px;
+    }
+    header #subnav {
+        position: static;
+        .contain {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .logo {
+            margin-right: auto;
+        }
+        .logo img {
+            margin: 0px;
+            width: 250px;
+        }
     }
     #hero > div {
         grid-template-columns: 1fr;
         grid-template-areas: "image" "contents";
-        gap: 60px;
+        gap: 40px;
+        br {
+            display: none;
+        }
     }
     #hero .ic {
         grid-area: image;
         position: static;
         width: 100%;
+        min-height: 300px;
+        height: 50dvh;
         z-index: -1;
         img {
             display: block;
             height: 100%;
+            object-position: bottom;
+        }
+    }
+    #hero .content {
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            max-width: 430px;
+            margin: 40px auto;
+        }
+        .btn {
+            margin: 0px auto;
+        }
+    }
+    nav {
+        opacity: 1;
+        padding: 25px 0px;
+        .contain {
+            grid-template-columns: 1fr 1fr;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo img {
+            margin: 0px 0px 0px auto;
+        }
+        .links {
+            display: none;
+        }
+        #ham {
+            display: flex;
+        }
+        a:has(img) {
+            border-bottom: 2px solid transparent;
+        }
+        a img {
+            width: 1.25rem;
+        }
+        .links > a {
+            padding: 0px;
+        }
+        .drop-menu {
+            background-color: var(--sec);
+        }
+    }
+    
+    section {
+        padding: 100px 0px;
+    }
+    #s1 h2 {
+        font-size: clamp(2rem, 6dvw, 4rem);
+        margin-bottom: 40px;
+    }
+    #s1 .contain > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        p {
+            max-width: 500px;
+        }
+        .ic {
+            min-height: 300px;
+            height: 100%;
+            img {
+                height: 100%;
+                object-position: top;
+            }
+        }
+    }
+}
+@media screen and (max-width: 650px) {
+    header #subnav {
+        .logo {
+            margin-left: auto;
         }
     }
 }
